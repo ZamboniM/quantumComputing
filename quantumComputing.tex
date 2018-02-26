@@ -1,14 +1,19 @@
-\documentclass[10pt,a4paper]{report}
+\documentclass[10pt]{report}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 \usepackage[italian]{babel}
+\usepackage{graphicx}
 \graphicspath{ {images/} }
 \author{Zamboni Marco}
 \date{26 Febbraio 2018}
 \title{{Computer e Computazione Quantistica}\\
 		{\large Liceo Scientifico G.Galilei}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
 \begin{document}
-\maketitle
+\input{titolo}
 \tableofcontents
 \chapter{Introduzione}
 \input{chapters/introduzione}
