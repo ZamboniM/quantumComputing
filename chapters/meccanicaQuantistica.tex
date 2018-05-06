@@ -3,12 +3,37 @@ La meccanica quantistica è una teoria fisica che descrive il comportamento dell
 
 \section{Elementi fondamentali della meccanica quantistica}
 \subsection{Dualismo onda-particella}
-Nella fisica classica vigevano due blocchi di leggi distinti e apparentemente indipendenti: quelle di Newton, che descrivono i corpi meccanici, e quelle di Maxwell, che invece descrivono i campi elettromagnetici come ad esempio la luce. Quest'ultima era elemento di dibattito in quanto empiricamente con l'esperimento di Young era stato dimostrato che essa è sottoposta ai fenomeni di diffrazione e interferenza: tipici delle onde; ma l'effetto fotoelettrico (emissione di elettroni da parte di una superficie a seguito di un'illuminazione) era spiegabile solo se trattata come insieme di particelle.
-La meccanica quantistica assume quindi che l'unico modo per spiegare ogni fenomeno fisico è il non limitarsi a considerare la luce \textit{o} onda \textit{o} particella, bensì accettare che essa è entrambi contemporaneamente.
+Nella fisica classica vigevano due blocchi di leggi distinti e apparentemente indipendenti: quelle di Newton, che descrivono i corpi meccanici, e quelle di Maxwell, che invece descrivono i campi elettromagnetici come ad esempio la luce. Quest'ultima era elemento di dibattito in quanto empiricamente con l'esperimento di Young era stato dimostrato che essa è sottoposta ai fenomeni di diffrazione e interferenza: tipici delle onde; ma l'effetto fotoelettrico (emissione di elettroni da parte di una superficie a seguito di un'illuminazione) era spiegabile solo se trattata come insieme di particelle.\\
+La meccanica quantistica assume quindi che l'unico modo per spiegare ogni fenomeno fisico è il non limitarsi a considerare la luce \textit{o} onda \textit{o} particella, bensì accettare che essa è entrambi contemporaneamente.\\
 Non è comunque solo la luce ad essere soggetta al dualismo, bensì ogni particella: ad esempio nell'esperimento di Zeilinger viene fatto notare come anche i neutroni (normalmente considerati particelle) presentano i fenomeni di interferenza
 \subsection{Indeterminazione e casualità}
+Per illustrare con miglior chiarezza il concetto partiamo da un paio di esempi.
+\subsubsection{Esperimento classico}
+Immaginiamo di avere un oggetto, tipo pallina da tennis, che possa essere modellizzato come punto materiale e analizziamo le grandezze fisiche posizione e velocità, ricordandoci che il contesto deve essere controllato in modo che l'esperimento sia ripetibile.\\
+All'istante \textit{t=0} la pallina si trova nella posizione \{\textit{x=0,y=0}\} e ad essa imprimiamo una certa velocità. Il moto della pallina sarà parabolico (ricordiamoci che è presente la gravità) come quello mostrato in figura:\\
+\begin{center} \includegraphics[scale=0.8]{motoParabolico} \end{center}
+La cosa fondamentale che vogliamo evincere da questo esperimento è il fatto che ponendoci nelle stesse condizioni: stessa pallina da tennis, stessa posizione all'istante 0 e stessa velocità; il moto sarà sempre identico e la pallina atterrerà sempre nella stessa posizione. Questo ci fa notare come la natura abbia un comportamento deterministico ed è elemento fondamentale del metodo scientifico: se si ottenessero sempre risultati diversi non si potrebbe fare scienza.
+\subsubsection{Esperimento quantistico}
+Per questo esempio sfruttiamo il già citato esperimento di Zeilinger:
+\begin{center} \includegraphics[scale=0.6]{neutronDiffraction} \end{center}
+Come si può vedere dall'immagine l'apparato sperimentale è composto da una pistola per neutroni (c'è scritto elettroni, ma il risultato non cambia se si usa una particella oppure l'altra); un muro con due fenditure (che sono dell'ordine di grandezza del diametro della particella), una maschera per evitare al più possibile contaminazioni esterne; un muro finale ove con un detector è possibile trovare la posizione in cui il neutrone è arrivato.
+Immaginiamo di esaminare un neutrone per volta; esso è preparato sempre alla stessa maniera e sottoposto sempre allo stesso ambiente; ciò che ci si aspetterebbe, ogni volta misuriamo dove si schianta con il muro finale; compiendo percuò sempre lo stesso identico esperimento quindi ci si aspetterebbe di ottenere sempre lo stesso identico risultato; ma non è così, ogni volta la posizione è diversa.\\
+In conclusione non c'è più determinismo, la natura in realtà è casuale e questo è dimostrato empiricamente, quindi non si può più far scienza? Sembrerebbe di no, e sicuramente il percorso del neutrone non è più deterministico e prevedibile con certezza, ma ripetendo l'esperimento un numero molto grande di volte e costruendo un grafico \{numero-neutroni/posizione\} otteniamo un risultato come quello nella figura seguente.
+\begin{center} \includegraphics[scale=2.5]{distribuzioneZeilinger} \end{center}
+Due sono le osservazioni importanti:
+\begin{enumerate}
+\item Nel caso in cui si rifacesse tutto da capo otterremmo la stessa identica figura; quindi pur non essendo deterministico un singolo neutrone è possibile fare scienza sulla distribuzione di probabilità di un insieme di essi e quindi descrivere ognuna delle grandezze fisiche di ogni particella come probabilità
+\item La figura che si è andata a creare corrisponde esattamente a una figura di interferenza a due fenditure, confermando (come già detto) il dualismo onda-particella
+\end{enumerate}
+\subsubsection{Limite classico della meccanica quantistica}
+A questo punto è necessario chiedersi come mai i modelli matematici applicati a corpi microscopici siano radicalmente diversi da quelli che compongono la fisica classica; in fondo ogni oggetto macroscopico è infine composto da particelle fondamentali che seguono la meccanica quantistica.
+Le soluzioni a cui si può arrivare sono molteplici, ma tutte non esaustive, le quali hanno addirittura aperto un dibattito filosofico. Qui però rimaniamo all'interno dell'\textit{interpretazione di Copenaghen}, la più importante. Innanzitutto dato che un corpo macroscopico è formato da un numero enorme di particelle può valere la \textit{legge dei grandi numeri} e quindi ciò che si manifesta non è altro che la "vittoria" dell'evento più probabile. Poi è possibile risalire ad alcune equazione classiche da quelle quantistiche ponendo $\hbar$ $\to$ 0; $\hbar$ è la costante di Planck ridotta, ma non essendo lo scopo dell'elaborato analizzare la matematica dietro la meccanica quantistica l'argomento non verrà approfondito.\\
+Il problema che rimane è legato al fenomeno dell'\hyperref[sec:entanglement]{entanglement} che affronteremo fra poco
+
+\subsection{La sovrapposizione}
 \subsection{La misura}
 \section{Conseguenze apparentemente controintuitive}
 \subsection{Indeterminazione di Heisenberg}
 \subsection{Entanglement}
+\label{sec:entanglement}
 \subsubsection{Il gatto di Schrodinger: vivo o morto?}
