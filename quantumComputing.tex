@@ -11,7 +11,19 @@
 		{\large Liceo Scientifico G.Galilei}}
 
 \usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \cfoot{Zamboni Marco}%
+  \rfoot{\thepage}%
+  \lfoot{\thesubsection}%
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+}
 \pagestyle{fancy}
+\fancyhf{}
+\rfoot{\thepage}
+\cfoot{Zamboni Marco}
+\lfoot{\thesubsection}
+\rhead{\leftmark}
 
 \begin{document}
 \input{titolo}
