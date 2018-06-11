@@ -1,7 +1,7 @@
 Un computer, classico o quantistico che sia, ha lo scopo di gestire e manipolare informazioni; le quali come unità di misura fondamentale hanno il \underline{BIT} (dall'inglese Binary digIT).\\
 Nei computer quantistici viene però usata una variante denominata \underline{QUBIT} (QUantum BIT), la quale ha comportamenti di tipo quantistico.
 \section{Bit}
-\subsection{Boh}
+\subsection{Teoria}
 Un bit, sumbolo \textit{b}, può assumere solamente 2 valori: \{\textit{0}, \textit{1}\}, ma è sufficiente per svolgere ogni processo e rappresentare ogni tipo di informazione, qualche esempio:
 \begin{enumerate}
 \item I numeri (in formato binario) si possono ottenere direttamente con una sequenza di bit, e si possono convertire facilmente in decimale per facilitare la comprensione umana:\\
@@ -23,3 +23,20 @@ L'informazione (i bit) è implementata nella realtà in moltissimi modi che si s
 \item Una menzione va fatta anche alla RAM; essa somiglia alla memoria flash, ma è molto più veloce; è possibile accedere a qualsiasi informazione nell'ordine dei nanosecondi, nei computer attuali ne sono presenti diversi GB. La nota negativa (a parte il costo) è il fatto che la memoria non è persistente e quindi quando cessa l'alimentazione ogni dato viene perso. Il suo uso è quindi quello di permettere di lavorare in tempo reale su informazioni che poi verranno copiate (=salvate) su altra tipo di memoria.
 \end{enumerate}
 \section{Qubit}
+\subsection{Teoria}
+Similarmente al bit anche i qubit possono assumere solamente due valori: \{\textit{0, 1}\} però non obbligatoriamente come \textit{autovalori}.
+Un qubit è quindi un sistema quantico che può assumere due livelli energitici: \{$\ket{0}$, $\ket{1}$\} ove $\ket{0}$ viene spesso definito \textit{terra} in quanto più basso energeticamente.  Assieme formano quello che si chiama \textit{standard basis vector}; un elemento di algebra lineare. Come tutti i vettori essi hanno \textit{direzione, verso e modulo}; ma potendo avere anche coefficienti complessi i qubit dispongono anche di una \textit{fase}. Per rappresentare ogni possibile superposizione di un qubit viene usata la dicitura $\alpha\ket{0} + \beta\ket{1}$ ove \{$\alpha,\beta \in \mathbb{C}$\}. Con $|\alpha|^2$ si ottiene la probabilità di ottenere il valore 0 e $|\beta|^2$ quella del valore 1; essendo poi volori di probabilità $|\alpha|^2 + |\beta|^2 = 1$ sempre.\\
+Volendo semplificare il più possibile in questa tesina si cercherà di evitare terminologie matematiche di algebra lineare; per i qubit useremo sempre quindi una rappresentazione grafica, detta \underline{BLOCH SPHERE}; ciè una sfera di raggio 1 in cui ogni punto sulla sua superficie rappresenta un qubit:\\
+\begin{center}
+\includegraphics[scale=0.5]{exampleBlochSphere}
+\end{center}
+I punti allineati all'asse Z rappresentano gli autostati; in cima alla sfera il valore è $\ket{0}$; in fondo $\ket{1}$. In qualsiasi altro punto si ha superposizione; in particolare le rotazioni intorno all'asse Z (angolo rappresentano la fase. L'angolo $\theta$ modifica quindi le probabilità di ottenere i due valori \{\textit{0, 1}\}, ma non l'angolo $\phi$ (fase); difatti la fase è un'informazione che si va a perdere quando si fa il quadrato del modulo di $\alpha$ e $\beta$. La fase però non è inutile in quanto applicando trasformazioni (come si vedrà nel capitolo successivo) al qubit determinerà risultati diversi anche in $|\alpha|^2$ e $|\beta|^2$
+\subsection{Hardware}
+La costruzione fisica dei qubit è al giorno d'oggi uno dei problemi maggiori in quanto i fenomeni quantistici si presentano solo in condizioni particolari, in genere nel microscopico, e quindi molto instabili e difficilmente controllabili.\\
+Le soluzioni proposte e adottate sono molteplici, ma la più famosa adottata da D-WAVE e da GOOGLE (chiamata SQUID) è quella di utilizzare un particolare metallo chiamato Niobio (\textit{Nb}), numero 41 sulla tavola periodica.
+La scelta è data dal fatto che viene sfruttato il campo magnetico generato quando è in stato di superconduttore e tra gli elementi puri il \textit{Nb} è quello che diventa tale alla temperatura più alta (9,25K) e genera uno dei campi magnetici maggiori.\\
+\begin{center}
+\includegraphics[scale=1.5]{niobiumQubit}
+\end{center} 
+Come si vede dall'immagine il campo generato può avere due versi opposti (frecce blu e rosse ed esso si comporta in modo quantistico e il verso è descritto da un vettore di stato che non assume obbligatoriamente autovalori quindi uno può rappresentare $\ket{0}$ e l'altro $\ket{1}$.\\
+Ad oggi si è arrivati a produrre anche chip con anche una cinquantina di qubit, veramente pochi a confronto dei milioni necessari a rendere i computer quantistici utili a livelllo commerciale, quindi altri modi di creare qubit sono in fase di ricerca (principalmente basati su fotoni e elettroni), ma lo stadio è molto precoce.
