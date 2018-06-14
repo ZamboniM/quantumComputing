@@ -83,4 +83,13 @@ I gate \textit{S} e \textit{T} sono molto simili a \textit{Z} solamente che appl
 \end{center}
 
 \section{Quantistiche (2 qubit)}
+Qui tratteremo di due qubit contemporaneamente; gli autostati saranno quindi 4 diversi: $\ket{00}$, $\ket{01}$, $\ket{10}$ e $\ket{11}$. Per convenzione il qubit più significativo (e quindi il primo) si trova nella posizione a destra mentre il secondo a sinistra.\\
+Un esempio di sovrapposizione può essere: $\frac{1}{\sqrt{2}}(\ket{00} -\ket{11})$ in cui al 50\% \textbf{entrambi} i qubit varranno 1 e al 50\% \textbf{entrambi} varranno 0. 
 \subsection{CNOT}
+Le porte di interesse ad operare su coppie di qubit devono operare della logica condizionale tra i qubit e quindi far dipendere lo stato di un qubit (chiamato target) da quello di un altro (chiamato controllo). La porta utilizzata è denominata \textit{Controlled-NOT} o più semplicemente \textit{CNOT}. Esso applica una porta \textit{X} al target se e solo se il controllo assume valore 1, mentre non fa nulla in caso sia 0.\\
+In caso si abbiano autostati la faccenda è piuttosto semplice: (il qubit di controllo è quello più significativo, mentre il target è quello meno.)
+\begin{center}
+\includegraphics[scale=0.8]{cnotAuto}
+\end{center}
+Se però il qubit di controllo si trova in uno stato di sovrapposizione tutto diventa più complicato in quanto non si sa a priori se esso valga 0 oppure 1 e quindi nemmeno se il target è stato sottoposto ad \textit{X} oppure no. Chiaramente la misura di anche solo uno dei due fa collassare ad autostato entrambi in quanto conoscere se \textit{X} è stato applicato e che il controllo valga 1 è la stessa cosa.\\
+Di particolare importanza è notare come applicare la porta CNOT crei uno stato \textit{entangled} tra i due qubit, peculiaretà che tra bit classici non può in alcun modo accadere.
