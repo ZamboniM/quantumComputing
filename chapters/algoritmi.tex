@@ -79,5 +79,42 @@ Le macchine quantistiche hanno la possibilità di sfruttare ogni algoritmo class
 Questi ultimi in genere risolvono alcuni problemi calcolabili con una complessità minore degli algoritmi classici; in particolare un sottoinsieme dei Non Polinomiali (chiamato EQP) se approcciato con una macchina rientra nei Polinomiali. (Questo ovviamente non funziona per tutti i problemi, ad esempio il commesso viaggiatore rimane NP).\\
 Essendo la maggior parte di questi algoritmi molto complessi sia dal punto di vista informatico che matematico (richiedendo conoscenza approfondita di algebra lineare) dopo qualche esempio di applicazione delle porte logiche gli algoritmi non verranno approfonditi, ma solo esposti.
 \subsection{Deutsch-Josza}
-\subsection{Groover}
+Disponiamo di una scatola nera che implementa una funzione \textit{$f: \{0,1\}^n \rightarrow \{0,1\}$} cioè prende in input \textit{n} bit e ha un output di uno solo. Di questa funzione si sa solo che può essere o costante (cioè per tutti gli input restituisce un solo risultato) oppure bilanciata (e quindi per esattamente metà restituisce 1 e per l'altra metà 0). Viene richiesto quindi di determinare se \textit{f} è costante o bilanciata.
+Questo è il problema che l'algoritmo di Deutsch-Josza deve risolvere.
+\subsubsection{Approccio classico}
+Innanzitutto si può notare che esso è risolvibile anche in modo classico: si possono provare in ordine varie combinazioni degli \textit{n} bit e verificare come si comporta \textit{f}. Nel caso ottimo bastano due test, se il risultato è diverso sicuramente la funzione non può essere costante e quindi è bilanciata; nel caso pessimo però è necessario provare almeno la metà più uno in quanto finchè otteniamo risultati identici non possiamo essere sicuri che \textit{f} sia costante finchè essi non sono più della metà. La complessità di un approccio classico è infatti \textit{O($2^n$)} in quanto, essendo $2^n$ le possibili combinazioni, ne vanno testate in media $2^{n-1} + 1$.
+\subsubsection{Approccio quantistico}
+Nel caso in cui la scatola nera sia una macchina quantistica e quindi non rompa la superposizione dell'input è possibile applicare l'algoritmo (quantistico) di Deutsch-Josza. Il concetto è che invece di dare in input una combinazione precisa ogni singolo qubit è in sovrapposizione con egual probabilità di essere 0 o 1; Si ottiene quindi una correlazione tra input e output la quale ha probabilità di avere valore 0 nulla solo se \textit{f(x)} è bilanciato e valore 1 se \textit{f(x)} è costante (per interferenza distruttiva e costruttiva).
+Per più informazioni a riguardo:\\
+$\href{https://bit.ly/2MwuZRI}{bit.ly/2MwuZRI}$\\
+La complessità di questo algoritmo è \textit{O(N)} in quanto richiede solo di preparare una combinazione, il che è un'accelerazione esponenziale.
+\subsection{Grover}
+L'algoritmo di Grover il problema della ricerca in una lista casuale (come la ricerca lineare) con un approccio quantistico.\\
+Nell'algoritmo viene costruita una sovrapposizione di qubit in modo tale che ogni indice sia equiprobabile, vengono poi applicate delle trasformazioni al sistema in modo tale che la probabilità dell'indice corretto aumenti; questo viene ripetuto un numero tale di volte in modo tale da massimizzare la probabilità che il sistema collassi all'indice corretto, si può dimostrare che il numero è dell'ordine di $\sqrt{N}$.
+La probabilità di ottenerlo però non arriva mai a 1 e quindi si può ottenere un risultato sbagliato; per questo l'algoritmo non è deterministico, ma dato che essa non dipende da N ripetere l'esecuzione dell'algoritmo solo poche volte rende la probabilità di errore molto prossima allo  0. La complessità dell'algoritmo è quindi \textit{O($\sqrt{N}$)}.
+Per approfondimenti:\\
+$\href{https://bit.ly/1ubOwWj}{bit.ly/1ubOwWj}$
 \subsection{Shor}
+Il problema che viene affrontato dall'algoritmo di Shor a parole è relativamente semplice: Fattorizzare un numero. Vediamo innanzitutto come risolverlo da un punto di vista classico.
+\subsubsection{Approccio classico}
+Non esistendo alcuno stratagemma veloce per determinare quali primi dividono un numero qualsiasi è necessario provare tutti quelli minori del numero da dividere. Sfortunatamente però non esiste nemmeno un modo istantaneo per discernere un numero primo da un non primo e nemmeno uno che ci permette di capire quale sia il numero primo successivo a uno dato; quindi non solo bisogna tentare tutti i primi minori del numero, ma bensì tutti (o quasi) i numeri minori; se ad esempio volessimo scomporre 308 il procedimento sarebbe il seguente:
+Si tenta di dividere per 2 308, è possibile quindi 2 è un fattore, otteniamo 154. Si riprova con 2 ed è dividibile, otteniamo 77. Esso non è divisibile per 2, nè per 3, nè per 5, ma invece per 7 sì (si possono saltare i fattori pari) otteniamo 11. Esso non è divisibile per 7, nemmeno per 9 ma per 11; otteniamo 1. Essendo 11 maggiore di 1 possiamo fermarci.\\
+308 viene qindi scomposto in $2^2 \times 7 \times 11$. Si può notare come potenzialmente ci si può spingere fino a $\sqrt{M}$ (dove M è il numero) e l'insieme dei numeri compresi tra 2 e $\sqrt{M}$ cresce in modo esponenziale rispetto al numero di cifre (chiamato N) di M, perciò aggiungere una cifra al numero da scomporre rende l'algoritmo esponenzialmente più lento. La complessità si può quindi denotare approssimativamente con \textit{O($2^N$)}.
+\subsubsection{Approccio quantistico}
+La chiave dell'algoritmo quantistico di Shor sta nel processo di ricerca del periodo di una funzione svolto dalla \textit{trasformata di Fourier quantistica} (\textbf{QFT}). Per capire come essa funzioni riporto l'analogia del professor Scott Aarson tradotta in italiano:
+\begin{displayquote}
+Immaginiamo che io abbia degli orari molto strani; in particolare la mia giornata dura più di 24 ore. Se ti dicessi che oggi mi sono svegliato alle 5 del pomeriggio sapresti dirmi quanto di preciso dura? 25, 26, 27.4 etc? Certo che no, infatti in ogni caso la mia sveglia cambierebbe ogni giorno e prima o poi nella maggior parte dei casi capiterà che arrivi alle 5 del pomeriggio.\\
+Ora immaginiamo che il muro della mia camera sia pieno di orologi analogici, ma tutti diversi: in ognuno di essi la lancetta delle ore per compiere un giro intero ci impiega un tempo diverso e per di più esiste un orologio per ogni periodo cui si possa pensare. Per di più sotto ognuno è presente un poster cui è attaccata una puntina. Ti posso assicurare che la prima volta che ho dormito nell'appartamento ho posizionato le puntine al centro di ogni poster, poi però ogni giorno subito dopo essermi svegliato spostavo le puntine di un centimetro nella direzione indicata dalla lancetta.\\
+Ora, esaminando le puntine, si può affermare con sicurezza la durata della mia giornata? Assicuro che sì, è possibile. Per esempio se la mia giornata fossse di 26 ore si può dedurre che il moto della puntina sotto l'orologio delle 24 ore sia periodico; ogni giorno la lancetta punta in posizioni diverse e prima o poi ritornerà nella posizione iniziale.\\
+Cosa accade però alla puntina sotto l'orologio delle 26 ore? Essendo in sincrono con la mia giornata ogni volta che mi sveglio la lancetta punta sempre la stessa ora, e quindi la stessa direzione, perciò la puntina si muoverà sempre nella stessa direzione. L'importante è che questo accade solo per l'orologio delle 26 ore.
+\begin{center}
+\includegraphics[scale=1]{ShorClocks}
+\end{center}
+Infine quindi per determinare la durata della mia giornata basta solo cercare l'orologio la cui puntina è più lontana dal punto iniziale.
+\end{displayquote}
+Questo è quello che accade nel QFT: una serie di qubit in sovrapposizione rappresentano contemporaneamente tutti i possibili periodi, poi per interferenza costruttiva quello corretto diviene sempre più probabile a discapito degli altri, così che quando il sistema collassa molto probabilmente sarà sul periodo corretto.\\
+Ora ci si può avvalere della matematica classica difatti per fattorizzare un numero \textit{N} basterà scegliere un numero casuale minore di N\textit{a} e cercare la periodicità di $a^x mod N$ (Dove \textit{mod} rappresenta il resto della divisione. A questo punto è dimostrabile come il Massimo Comun Divisore di $a^\frac{periodo}{2}$-1 e N è un fattore di N e quindi alla soluzione.\\
+Questo non funziona per tutti gli \textit{a}, ma è molto più probabile un esito positivo piuttosto che negativo; quindi è sufficiente provarne pochi.
+Calcolare la complessità non è semplice, in quanto dipende da come l'algoritmo viene implementato, ma dovrebbe essere intorno a \textit{O($N^3$)} il che è un'accelerazione esponenziale rispetto all'algoritmo classico.
+Per approfondire:\\
+\href{https://bit.ly/2tfo86l}{bit.ly/2tfo86l}
