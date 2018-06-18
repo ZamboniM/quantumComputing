@@ -1,0 +1,46 @@
+Si parla di Quantum Supremacy (Supremazia quantistica) quando un computer quantistico riesce a risolvere un problema meglio (e in meno tempo) del miglior super-computer classico. Questo periodo (circa metà del 2018) è di fondamentale importanza in quanto per la prima si sta raggiungendo questo obiettivo.
+\section{Attualmente}
+\subsection{Essere un computer quantistico}
+Sembra assurdo, ma ad oggi è l'unica cosa che i computer quantistici riescono a fare meglio di quelli classici; e non è banale.\\
+Infatti è possibile con un computer classico simulare in modo perfetto un computer quantistico, ma ovviamente diventa sempre più difficile per ogni qubit che si vuole aggiungere; ad oggi IBM è riuscita a simulare 56 qubits, numero che è quindi diventato spartiacque per la supremazia quantistica: riuscire a costruire una macchina quantistica generica (senza quindi limitazioni o specializzazioni) di almeno 57 qubits valr al raggiungimento della supremazia quantistica.\\
+Importante notare come i computer classici non possono evolversi nella simulazione di computer quantistici più velocemente di quanto si evolvono i computer quantistici stessi in quanto l'aggiunta di ogni qubit simulato richiede esponenzialmente più risorse e in particolare se si vuole simulare anche solo 260 qubits sarebbero necessari più bit di quanti atomi sono presenti nell'universo.
+\subsection{Sampling problem}
+Data una determinata distribuzione di probabilità si vuole avere una funzione che genera valori secondo la determinata distribuzione.\\
+Per un computer classico è in realtà un problema piuttosto difficile soprattutto se i possibili valori tra cui scegliere sono molti.\\
+Al contrario per un computer quantistico è particolarmente semplice in quanto il problema fa intrinsecamente parte del suo funzionamento; infatti costruendo un sistema di, ad esempio 50 qubit, essi possono rappresentare $2^{50}$ (un numero a 15 cifre) valori contemporaneamente e la probabilità con cui ogni numero si presenta è possibile ottenerla modificando la superposizione dei 50 qubit. In questo modo è quindi possibile costruire una distribuzione di probabilità tra i $2^{50}$ valori e la funzione per ottenerli non è altro che la misura del sistema, in quanto farà collassare i qubit secondo la distribuzione di propabilità costruita.\\
+La problematicità sta nel fatto che in realtà questa proprietà è quasi inutile in quanto sono pochissimi i casi di applicazione e dove anche serve (ad esempio nel campo dell'intelligenza artificiale) il problema a delle piccole varianti che rendono il tutto più complesso.
+\section{In futuro}
+\subsection{Crittografia}
+La crittografia è il processo di cifrare dei dati, e quindi nasconderli, secondo un criterio (in genere matematico) preciso in modo che la cifratura di dati identici deve portare a risultati identici, e spesso è anche necessario che sia possibile tornare indietro in modo semplice.\\
+Al giorno d'oggi esistono diversi algoritmi di crittografia; quelli più usati (in quanto migliori) sono di due tipi:
+\begin{enumerate}
+\item Unidirezionali, cioè non è mai necessario che dai dati cifrati si ritorni ai dati in chiaro.\\
+Un esempio d'uso riguarda le password: ogni servizio digitale richiede che gli utenti si autentichino utilizzando una password, essa non viene però salvata in chiaro (in quanto è possibile che qualcuno si infiltri e legga), ma cifrata; l'autenticazione avviene confrontando se cifrando quello che l'utente inserisce si ottiene lo stesso risultato della versione salvata.
+\item A chiave simmetrica, cioè la cifratura avviene secondo un criterio che quando semplicemente invertito permette di decifrare.\\
+Un esempio famoso è il cifrario di Cesare in cui ogni carattere del messaggio da cifrare viene spostato di 13 posti nell'alfabeto verso destra. Ovviamente è sufficiente andare verso sinistra per riottenere il messaggio in chiaro.\\
+Questo genere di cifratura non viene praticamente mai usato in quanto poco sicuro
+\item A chiave asimmetrica, cioè esiste una chiave in grado di cifrare i dati e una in grado di decifrarli, ma esse non sono correlate in modo semplice ed è quindi impossibile risalire dalla chiave di cifratura (chiamata anche pubblica) a quella di decifratura (o privata).\\
+Questi algoritmi sono in genere utilizzati nelle comunicazioni cifrate in quanto ad esempio se A e B vogliono comunicare possono per prima cosa scambiarsi le chiavi pubbliche, poi quando A vuole scrivere a B utilazza per cifrare la chiave di B, poi B può decifrare utilizzando la propria chiave privata (che non conosce nessuno se non lui); e ovviamente viceversa.\\
+Questo è particolarmente sicuro perchè se anche qualcuno intercettasse le comunicazioni non potrebbe in alcun modo (anche possedendo le chiavi pubbliche) decifrare i dati trasmessi.
+\end{enumerate}
+Però per la natura matematica degli algoritmi di cifratura esiste sempre un modo di forzare dati cifrati pur non avendo le chiavi, per farlo però è necessario talmente tanto tempo che nel mentre i dati perderebbero la loro importanza.\\
+Nella pratica la forzatura è basata sulla scomposizione in numeri primi del messaggio cifrato, e qui entrano in scena i computer quantistici, perchè, come abbiamo visto, le macchine classiche scompongono in tempo esponenziale, ma grazie all'algoritmo di Shor quelle quantistiche possono farlo con complessità polinomiale. Questo distrugge, di fatto, una delle basi della sicurezza informatica e potenzialmente può bloccare la società in quanto non sarà possibile svolgere operazioni che devono essere sicure (ad esempio quelle bancarie).\\
+Ovviamente il futuro non è apocalittico in quanto si stanno già progettando soluzioni; in particolare invece che basarsi sulla matematica si sta pensando alla fisica e quindi utilizzare fenomeni tra cui l'entanglement.\\
+In ogni caso prima che verrà prodotto una macchina quantistica con abbastanza qubit da poter decifrare i dati attuali passeranno ancora molti anni.
+\subsection{Simulazione di un sistema fisico quantistico}
+\subsection{Altro}
+I computer quantistici sono o saranno sicuramente utili in ambito scientifico avendo notato come alcuni algoritmi possono accelerare anche in modo esponenziale la risoluzione di alcuni. In altri ambiti è però ancora un mistero, una volta che saranno largamente usati nasceranno applicazioni che al giorno d'oggi non possiamo immaginarci allo stesso modo di come all'avvento dei computer classici era inimmaginabile ad esempio internet o l'esistenza di ambienti grafici.
+L'informatica ha da sempre aiutato molto la ricerca nell'ambito delle scienze naturali in quanto preparare un apparato sperimentale funzionale è spesso molto difficile e costoso, quindi lo studio di molti fenomeni viene fatto attraverso delle simulazioni.\\
+Ad esempio per le analisi della propagazione di un gas un apparato sperimentale richiede strumenti in grado di analizzare le concentrazioni in modo preciso e senza influire sul sistema. Per di più la preparazione può essere pericolosa se si utilizzano sostanze tossiche. Utilizzando un computer è invece necessario solo descrivere matematicamente il moto delle particelle e lasciare a lui svolgere i calcoli.\\
+La fisica moderna è però incredibilmente complicata e simulare comportamenti quantistici richiede algoritmi con complessità troppo elevata per poterlo fare su macchine classiche.\\
+Un computer quantistico può però semplificare incredibilmente in quanto i fenomeni da simulare possono essere direttamente integrati nella costruzione di esso. In questo modo si accelererebbe moltissimo la ricerca nel campo della fisica moderna.
+\section{Ostacoli}
+Per fare in modo che i computer quantistici possano diventare una tecnologia pratica e matura esistono alcuni requisiti tecnici esposti da David DiVincenzo di IBM:
+\begin{enumerate}
+\item Essere fisicamente scalabili sul numero di qubit: cioè avere una struttura su cui si possano aggiungere qubit senza problema
+\item Ogni qubit può essere inizializzato a valori arbitrari
+\item Le porte logiche devono essere più veloci della decoerenza quantistica
+\item Deve esistere un insieme universale minimo di porte logiche
+\item I qubit possono essere letti in modo semplice
+\end{enumerate}
+Ad oggi non si riesce a raggiungere tutti gli obiettivi contemporaneamente; esistono computer quantistici funzionanti, ma o non sono universali o non scalabili e hanno un numero limitato di qubit che li rendono in pratica poco utili, ma la tecnologia si evolve velocemente, in poche decine di anni sarà sicuramente "\textit{mainstream}". (cioè comune)
