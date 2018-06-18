@@ -1,8 +1,9 @@
-\documentclass[10pt]{report}
+\documentclass[10pt,twoside]{report}
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{hyperref}
+\usepackage{pdfpages}
 \usepackage{graphicx}
 \usepackage{braket}
 \usepackage{amsfonts}
@@ -20,19 +21,24 @@
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \cfoot{Zamboni Marco}%
-  \rfoot{\thepage}%
-  \lfoot{\thesubsection}%
+  \fancyfoot[LE,RO]{\thepage}%
+  \fancyfoot[RE,LO]{\thesubsection}%
   \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
 }
 \pagestyle{fancy}
 \fancyhf{}
-\rfoot{\thepage}
+\fancyfoot[LE,RO]{\thepage}
 \cfoot{Zamboni Marco}
-\lfoot{\thesubsection}
-\rhead{\leftmark}
+\fancyfoot[RE,LO]{\thesubsection}
+\fancyhead[LE,RO]{\leftmark}
+
+\let\tempmargin\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tempmargin
+
 
 \begin{document}
-\input{titolo}
+\includepdf{titolo.pdf}
 \tableofcontents
 \chapter{Introduzione}
 \input{chapters/introduzione}
