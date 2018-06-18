@@ -52,7 +52,7 @@ La porta \textit{X} sulla BLOCH SPHERE applica una rotazione di $\pi$ radianti a
 \begin{center}
 \includegraphics[scale=1]{hGate}
 \end{center}
-La porta di \textit{Hadamard} (o semplicemente \textit{H}) è forse la più importante delle macchine quantistiche in quanto permette al qubit di passare da un'autostato a una superposizione in cui 0 e 1 sono equiprobabili (non sarà ovviamente così se il qubit di partenza non è in un'autostato). Più precisamente si può osservare sulla BLOCH SPHERE che \textit{H} applica una rotazione di $\pi$ intorno agli assi X e Z.\\
+La porta di \textit{Hadamard} (o semplicemente \textit{H}) è forse la più importante delle macchine quantistiche in quanto permette al qubit di passare da un autostato a una superposizione in cui 0 e 1 sono equiprobabili (non sarà ovviamente così se il qubit di partenza non è in un'autostato). Più precisamente si può osservare sulla BLOCH SPHERE che \textit{H} applica una rotazione di $\pi$ intorno agli assi X e Z.\\
 Quello che accade agli autostati se applicato \textit{H}:\\
 $\ket{0} \rightarrow \frac{1}{\sqrt{2}}(\ket{0} + \ket{1}) = \ket{+}$\\
 $\ket{1} \rightarrow -\frac{1}{\sqrt{2}}(\ket{0} + \ket{1}) = \ket{-}$\\
@@ -86,8 +86,8 @@ I gate \textit{S} e \textit{T} sono molto simili a \textit{Z} solamente che appl
 Qui tratteremo di due qubit contemporaneamente; gli autostati saranno quindi 4 diversi: $\ket{00}$, $\ket{01}$, $\ket{10}$ e $\ket{11}$. Per convenzione il qubit più significativo (e quindi il primo) si trova nella posizione a destra mentre il secondo a sinistra.\\
 Un esempio di sovrapposizione può essere: $\frac{1}{\sqrt{2}}(\ket{00} -\ket{11})$ in cui al 50\% \textbf{entrambi} i qubit varranno 1 e al 50\% \textbf{entrambi} varranno 0. 
 \subsection{CNOT}
-Le porte di interesse ad operare su coppie di qubit devono operare della logica condizionale tra i qubit e quindi far dipendere lo stato di un qubit (chiamato target) da quello di un altro (chiamato controllo). La porta utilizzata è denominata \textit{Controlled-NOT} o più semplicemente \textit{CNOT}. Esso applica una porta \textit{X} al target se e solo se il controllo assume valore 1, mentre non fa nulla in caso sia 0.\\
-In caso si abbiano autostati la faccenda è piuttosto semplice: (il qubit di controllo è quello più significativo, mentre il target è quello meno.)
+Le porte di interesse che lavorano su coppie di qubit devono operare della logica condizionale tra i qubit e quindi far dipendere lo stato di uno (chiamato target) da quello dell'altro (chiamato controllo). La porta utilizzata è denominata \textit{Controlled-NOT} o più semplicemente \textit{CNOT}. Essa applica una porta \textit{X} al target se e solo se il controllo assume valore 1, mentre non fa nulla in caso sia 0.\\
+Se si abbiano autostati la faccenda è piuttosto semplice: (il qubit di controllo è quello più significativo, mentre il target è quello meno.)
 \begin{center}
 \includegraphics[scale=0.8]{cnotAuto}
 \end{center}
